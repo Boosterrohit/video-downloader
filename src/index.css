@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		margin: 0;
+		background: #f8fafc;
+		color: #0f172a;
+		font-family: Georgia, 'Times New Roman', serif;
+	}
+
+	button,
+	input,
+	select {
+		font-family: inherit;
+	}
+}
+
+/* Keep the editor controls bright and readable across every tool panel. */
+[class~="bg-gray-800/50"] { background-color: #ffffff !important; }
+[class~="bg-gray-900"], [class~="bg-gray-900/40"] { background-color: #f8fafc !important; }
+[class~="bg-gray-950"] { background-color: #ffffff !important; }
+[class~="border-gray-800"], [class~="border-gray-700"], [class~="border-gray-700/60"], [class~="border-gray-600"] { border-color: #dbeafe !important; }
+[class~="text-gray-100"], [class~="text-gray-200"], [class~="text-gray-300"] { color: #1e293b !important; }
+[class~="text-gray-400"], [class~="text-gray-500"], [class~="text-gray-600"] { color: #64748b !important; }
+[class~="text-indigo-400"] { color: #0284c7 !important; }
+[class~="bg-indigo-600"], [class~="bg-indigo-500"] { background-color: #0284c7 !important; }
+[class~="hover:bg-indigo-500"]:hover { background-color: #0369a1 !important; }
+[class~="border-indigo-500"] { border-color: #38bdf8 !important; }
+[class~="bg-indigo-950/20"] { background-color: #f0f9ff !important; }
+[class~="bg-gray-700"] { background-color: #cbd5e1 !important; }
+[class~="accent-indigo-500"] { accent-color: #0284c7 !important; }
+
+.timeline-handle {
+	appearance: none;
+	background: transparent;
+	z-index: 20;
+}
+
+.timeline-handle.trim-start { z-index: 21; }
+.timeline-handle.trim-end { z-index: 22; }
+
+.timeline-handle::-webkit-slider-thumb {
+	appearance: none;
+	width: 12px;
+	height: 88px;
+	border-radius: 4px;
+	background: #0284c7;
+	border: 2px solid white;
+	box-shadow: 0 1px 4px rgb(15 23 42 / 35%);
+	cursor: ew-resize;
+	pointer-events: auto;
+}
+
+.timeline-handle::-moz-range-thumb {
+	width: 12px;
+	height: 88px;
+	border-radius: 4px;
+	background: #0284c7;
+	border: 2px solid white;
+	box-shadow: 0 1px 4px rgb(15 23 42 / 35%);
+	cursor: ew-resize;
+	pointer-events: auto;
+}
+
+.header-bg-img {
+  /* position: relative; */
+  background: white;
+  overflow: hidden;
+}
+
+.header-bg-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url('./assets/headerimg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0.3;
+  z-index: 0;
+}
+
+/* Keep all header content above the background */
+.header-bg-img > * {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-image-drag{
+    background-image: url('./assets/dropped.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
